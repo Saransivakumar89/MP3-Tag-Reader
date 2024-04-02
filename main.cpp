@@ -14,12 +14,13 @@ class MP3 {
     ID3 tag;
     const char *frames[6] = {"TPE1","TIT2","TALB","TCOM","TCON","TDRC"}; 
     const char *tags[6] = {"ARTIST","TITLE","ALBUM","COMPOSER","COMMENT","YEAR"};
-    fstream file; // Added file declaration
+    fstream file; 
 
 public:
     MP3(const string &filename): filename(filename) {}
 
-    void readTag() {
+    void readTag() 
+    {
         file.open(filename, ios::binary); 
         if (!file.is_open()) {
             cerr << "Error opening file: " << filename << endl;
